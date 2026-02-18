@@ -1,38 +1,37 @@
 import React from 'react';
+import { Star } from 'lucide-react';
 import './Testimonials.css';
 
 const Testimonials = () => {
     const reviews = [
-        { name: "Sarah J.", initial: "S", text: "Cameron did an amazing job on our windows! They look brand new. Very professional and detail-oriented. Highly recommend!" },
-        { name: "Mike T.", initial: "M", text: "Excellent service. Arrived on time, very polite, and the price was fair. Will definitely use On The Hill again." },
-        { name: "Emily R.", initial: "E", text: "Our view is crystal clear now. The attention to detail was impressive, even on the hard-to-reach windows." },
-        { name: "David L.", initial: "D", text: "Great local business. Cameron is friendly and hardworking. Support local!" }
+        { name: "Sarah Janzen", loc: "Collingwood", initial: "SJ", text: "Cameron did an amazing job on our windows! They look brand new. Very professional and detail-oriented. Highly recommend!" },
+        { name: "Michael Thoms", loc: "Blue Mountain", initial: "MT", text: "Excellent service. Arrived on time, very polite, and the price was fair. Our floor-to-ceiling glass looks incredible." },
+        { name: "Emily Richardson", loc: "Wasaga Beach", initial: "ER", text: "Our view is crystal clear now. The attention to detail was impressive, especially on the eaves and the hard-to-reach windows." }
     ];
 
     return (
-        <section id="testimonials" className="reviews-section">
+        <section id="testimonials" className="section-testimonials">
             <div className="container">
-                <div className="center-header">
-                    <h2>What Our Customers Say</h2>
-                    <div className="stars">★★★★★</div>
-                    <p>5.0 Rating on Google</p>
+                <div className="testimonials-header">
+                    <h2>Customer Experiences</h2>
+                    <p>Highly rated architectural cleaning in the Georgian Bay region.</p>
                 </div>
-                <div className="reviews-grid">
+                <div className="testimonials-grid">
                     {reviews.map((r, i) => (
-                        <div key={i} className="review-card">
-                            <div className="reviewer-avatar">{r.initial}</div>
-                            <div className="review-content">
-                                <div className="stars-small">★★★★★</div>
-                                <p>"{r.text}"</p>
-                                <span className="reviewer-name">- {r.name}</span>
+                        <div key={i} className="testimonial-card">
+                            <div className="stars-modern">
+                                {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
+                            </div>
+                            <p className="testimonial-text">"{r.text}"</p>
+                            <div className="testimonial-author">
+                                <div className="author-avatar">{r.initial}</div>
+                                <div className="author-info">
+                                    <h4>{r.name}</h4>
+                                    <p>{r.loc}</p>
+                                </div>
                             </div>
                         </div>
                     ))}
-                </div>
-                <div className="google-link">
-                    <a href="https://www.google.com/search?q=On+The+Hill+Window+Cleaning" target="_blank" rel="noopener noreferrer">
-                        See All Reviews on Google →
-                    </a>
                 </div>
             </div>
         </section>

@@ -7,7 +7,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -18,14 +18,14 @@ const Header = () => {
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container header-container">
+      <div className="header-container">
         <a href="#" className="logo">
           <span className="logo-text">ON THE HILL</span>
-          <span className="logo-sub">Window Cleaning</span>
+          <span className="logo-sub">EST. 2020</span>
         </a>
 
-        <button 
-          className="mobile-toggle" 
+        <button
+          className="mobile-toggle"
           onClick={toggleMenu}
           aria-label="Toggle navigation"
         >
@@ -36,10 +36,10 @@ const Header = () => {
 
         <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <a href="#services" onClick={closeMenu}>Services</a>
-          <a href="#work" onClick={closeMenu}>Our Work</a>
-          <a href="#about" onClick={closeMenu}>About</a>
+          <a href="#work" onClick={closeMenu}>Archive</a>
+          <a href="#about" onClick={closeMenu}>Process</a>
           <a href="#testimonials" onClick={closeMenu}>Reviews</a>
-          <a href="#estimate" className="cta-button" onClick={closeMenu}>Get Estimate</a>
+          <a href="#estimate" className="cta-button" onClick={closeMenu}>Begin Quote</a>
         </nav>
       </div>
     </header>

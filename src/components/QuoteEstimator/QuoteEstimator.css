@@ -1,272 +1,223 @@
 /* QuoteEstimator.css */
 @import '../../styles/variables.css';
 
+.quote-section-wrapper {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-background);
+    position: relative;
+    overflow: hidden;
+}
+
 .wizard-container {
-    max-width: 800px;
-    margin: var(--spacing-lg) auto;
+    max-width: 900px;
+    margin: 0 auto;
     background: white;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    padding: var(--spacing-md);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    padding: 3.5rem;
+    border: 1px solid #E2E8F0;
     position: relative;
     overflow: hidden;
 }
 
 .wizard-header {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 3.5rem;
     text-align: center;
 }
 
 .wizard-title h2 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    font-weight: 900;
     color: var(--color-primary);
-    margin-bottom: 0.2rem;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.75rem;
 }
 
 .wizard-title p {
-    color: #888;
-    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
 }
 
-.progress-bar {
-    height: 6px;
-    background: #eee;
-    border-radius: 3px;
-    margin-top: 1rem;
+.progress-container {
+    margin-top: 2rem;
+    position: relative;
+}
+
+.progress-bar-bg {
+    height: 8px;
+    background: #F1F5F9;
+    border-radius: 100px;
     overflow: hidden;
 }
 
-.progress-bar .fill {
+.progress-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--color-accent), var(--color-cta));
-    transition: width 0.4s ease-in-out;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Steps */
+/* Step Layouts */
 .step-content {
-    animation: fadeIn 0.4s ease-out;
+    animation: stepSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes fadeIn {
+@keyframes stepSlide {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateX(30px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
-.form-group-row {
-    margin-bottom: 1.2rem;
+.step-label {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
 }
 
-.form-group-row label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-full {
+    grid-column: 1 / -1;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: #F8FAFC;
+    border: 2px solid #E2E8F0;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all 0.2s;
     color: var(--color-text);
 }
 
-.form-group-row input,
-.form-group-row select,
-.form-group-row textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: var(--radius-md);
-    font-size: 1rem;
-    transition: border-color 0.2s;
-}
-
-.form-group-row input:focus,
-.form-group-row select:focus {
+.input-field:focus {
     border-color: var(--color-accent);
+    background: white;
     outline: none;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
 }
 
-.half {
-    width: 48%;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.half+.half {
-    margin-left: 4%;
-}
-
-/* Card Selection */
+/* Radio Cards */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
 }
 
-.select-card {
-    background: #fff;
-    border: 2px solid #eee;
+.option-card {
+    background: #F8FAFC;
+    border: 2px solid #E2E8F0;
+    padding: 1.5rem;
     border-radius: var(--radius-md);
-    padding: 1rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s;
-    font-weight: 500;
-    color: #555;
+    font-weight: 700;
+    color: var(--color-text-muted);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 80px;
+    gap: 0.75rem;
 }
 
-.select-card:hover {
-    border-color: #ddd;
-    background: #fafafa;
+.option-card:hover {
+    border-color: #CBD5E1;
+    background: white;
 }
 
-.select-card.selected {
+.option-card.active {
+    background: white;
     border-color: var(--color-accent);
-    background: rgba(74, 174, 217, 0.1);
     color: var(--color-primary);
-    font-weight: 600;
+    box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.2);
 }
 
-.service-card {
-    position: relative;
-}
-
-.checkbox-mock {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
+/* Estimate Display */
+.live-estimate-card {
+    margin-top: 3rem;
+    background: var(--color-primary);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
 }
 
-.selected .checkbox-mock {
-    background: var(--color-cta);
-    border-color: var(--color-cta);
+.estimate-value {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--color-accent);
 }
 
 /* Buttons */
-.btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-primary {
-    background: var(--color-accent);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #3a9ac5;
-    transform: translateY(-2px);
-}
-
-.btn-primary:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.btn-cta {
-    background: var(--color-cta);
-    color: white;
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 1rem;
-}
-
-.btn-cta:hover {
-    background: var(--color-cta-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid #ddd;
-    color: #666;
-}
-
-.btn-outline:hover {
-    border-color: #bbb;
-    color: #333;
-}
-
-.action-row {
+.btn-group {
+    margin-top: 3rem;
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
-    align-items: center;
+    gap: 1.5rem;
 }
 
-.full-width {
-    width: 100%;
+.btn-wizard {
+    padding: 1.25rem 2.5rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: all 0.3s;
 }
 
-/* Success Step */
-.success-container {
-    text-align: center;
-    padding: 4rem 2rem;
+.btn-prev {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 2px solid #E2E8F0;
 }
 
-.success-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--color-cta);
+.btn-prev:hover {
+    border-color: #CBD5E1;
+    color: var(--color-text);
+}
+
+.btn-next {
+    background: var(--color-accent);
     color: white;
-    border-radius: 50%;
-    font-size: 40px;
-    line-height: 80px;
-    margin: 0 auto 1.5rem;
+    border: none;
+    flex-grow: 1;
 }
 
-.price-display {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--color-primary);
-    margin: 1rem 0;
+.btn-next:hover {
+    background: #0EA5E9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.4);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .half {
-        width: 100%;
-        display: block;
-    }
+.btn-submit {
+    background: var(--color-cta);
+}
 
-    .half+.half {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
+@media (max-width: 640px) {
     .wizard-container {
-        margin: 1rem;
-        padding: 1rem;
+        padding: 2rem 1.5rem;
+        border-radius: 0;
     }
 
-    .action-row {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-group {
         flex-direction: column-reverse;
-        gap: 1rem;
-    }
-
-    .btn {
-        width: 100%;
     }
 }

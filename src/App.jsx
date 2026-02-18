@@ -7,6 +7,7 @@ import About from './components/About';
 import Testimonials from './components/Testimonials';
 import QuoteWizard from './components/QuoteEstimator/QuoteWizard';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   return (
@@ -15,12 +16,10 @@ function App() {
       <main>
         <Hero />
         <Services />
-        <div className="section-divider-light"></div>
         <Portfolio />
         <About />
-        <div className="section-divider-dark"></div>
         <Testimonials />
-        <section className="quote-section-wrapper" style={{ padding: '4rem 0', background: '#f0f4f8' }}>
+        <section className="quote-section-wrapper">
           <QuoteWizard />
         </section>
       </main>

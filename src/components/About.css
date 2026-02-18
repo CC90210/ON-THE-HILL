@@ -1,119 +1,98 @@
 /* About.css */
 @import '../styles/variables.css';
 
-.section-padding {
+.section-about {
     padding: var(--spacing-xl) 0;
+    background: white;
 }
 
-.about-container {
+.about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
+    gap: 6rem;
     align-items: center;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 var(--padding-x);
 }
 
-.about-image {
+.about-visual {
     position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.about-image img {
+.about-image-main {
     width: 100%;
-    height: auto;
-    display: block;
-    transform: scale(1.02);
-    transition: transform 0.5s;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    z-index: 2;
+    position: relative;
 }
 
-.about-image:hover img {
-    transform: scale(1.05);
-}
-
-.experience-badge {
+.about-image-secondary {
     position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    bottom: -3rem;
+    right: -3rem;
+    width: 60%;
+    border-radius: var(--radius-lg);
+    border: 8px solid white;
+    box-shadow: var(--shadow-lg);
+    z-index: 3;
 }
 
-.experience-badge .years {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--color-cta);
-    line-height: 1;
+.about-content-inner {
+    max-width: 550px;
 }
 
-.experience-badge .text {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 0.5rem;
-    font-weight: 600;
+.about-content-inner h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
 }
 
-.about-content h2 {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.subcap {
-    color: var(--color-accent);
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
+.about-accent {
     display: block;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 800;
+    letter-spacing: 0.1em;
     margin-bottom: 1rem;
 }
 
-.about-content p {
-    color: #666;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+.about-text {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
 }
 
-.trust-badges {
+.stat-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 3rem;
+    margin-top: 3rem;
 }
 
-.badge-item {
-    background: #eefbf3;
-    color: var(--color-cta-hover);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--color-cta);
+    margin-bottom: 0.25rem;
 }
 
-.margin-top {
-    margin-top: 1rem;
-    display: inline-block;
-    text-decoration: none;
+.stat-item p {
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
 }
 
-@media (max-width: 900px) {
-    .about-container {
+@media (max-width: 1024px) {
+    .about-grid {
         grid-template-columns: 1fr;
+        gap: 4rem;
     }
 
-    .about-image {
-        order: 2;
+    .about-image-secondary {
+        display: none;
+    }
+
+    .about-content-inner h2 {
+        font-size: 2.5rem;
     }
 }

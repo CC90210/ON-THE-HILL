@@ -1,12 +1,27 @@
 :root {
-  /* Colors */
-  --color-primary: #1B3A5C;
+  /* Colors - Modern Premium Palette */
+  --color-primary: #0F172A;
+  /* Deep Navy */
+  --color-primary-light: #1E293B;
   --color-secondary: #FFFFFF;
-  --color-accent: #4AAED9;
-  --color-background: #F5F5F5;
-  --color-text: #1A1A1A;
-  --color-cta: #2ECC71;
-  --color-cta-hover: #27AE60;
+  --color-accent: #38BDF8;
+  /* Fresh Sky Blue */
+  --color-background: #F8FAFC;
+  /* Slate 50 */
+  --color-text: #1E293B;
+  /* Slate 800 */
+  --color-text-muted: #64748B;
+  /* Slate 500 */
+  --color-cta: #10B981;
+  /* Emerald 500 */
+  --color-cta-hover: #059669;
+  /* Emerald 600 */
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --glass-blur: blur(12px);
 
   /* Typography */
   --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
@@ -18,16 +33,23 @@
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
-  --spacing-xl: 6rem;
+  --spacing-xl: 8rem;
 
   /* Border Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
 
   /* Container */
-  --container-width: 1200px;
-  --padding-x: 1rem;
+  --container-width: 1280px;
+  --padding-x: 2rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 body {
@@ -37,13 +59,23 @@ body {
   line-height: var(--line-height-base);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  letter-spacing: -0.02em;
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--padding-x);
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+section {
+  padding: var(--spacing-lg) 0;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 4rem;
+    --padding-x: 1.5rem;
+  }
 }

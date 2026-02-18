@@ -3,133 +3,145 @@
 
 .hero {
     position: relative;
-    height: 90vh;
-    /* Nearly full screen */
-    min-height: 600px;
-    background:
-        linear-gradient(rgba(27, 58, 92, 0.7), rgba(27, 58, 92, 0.85)),
-        url('https://images.unsplash.com/photo-1518382473187-b9397686b24a?auto=format&fit=crop&w=1920&q=80');
-    /* Modern window house */
-    background-size: cover;
-    background-position: center;
+    height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: white;
-    margin-top: 0;
-    /* Nav overlap handled by sticky */
+    background-color: var(--color-primary);
+    overflow: hidden;
 }
 
-/* Fallback if image fails */
-.hero::before {
-    content: '';
+.hero-background {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--color-primary), #162a42);
-    z-index: -1;
-    opacity: 1;
-    /* Was 0/1 depending on image loading */
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-/* If image loads, ::before is behind. But gradient is on top in `background` prop. */
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
 
 .hero-overlay {
-    /* Done via gradient above */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(15, 23, 42, 0.4) 100%);
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 10;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+    width: calc(100% - 4rem);
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    color: white;
+    animation: heroAppear 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.badge {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+@keyframes heroAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(56, 189, 248, 0.2);
+    color: var(--color-accent);
+    padding: 0.6rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(56, 189, 248, 0.3);
     margin-bottom: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 0.9rem;
 }
 
-h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.1;
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: white;
     margin-bottom: 1.5rem;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-weight: 900;
+    line-height: 1.05;
 }
 
 .hero-sub {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
     line-height: 1.6;
-    opacity: 0.9;
-    max-width: 700px;
+    opacity: 0.8;
+    max-width: 650px;
     margin: 0 auto 3rem;
 }
 
 .hero-actions {
     display: flex;
-    justify-content: center;
     gap: 1.5rem;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .hero-cta {
     background: var(--color-cta);
     color: white;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 1.25rem 2.5rem;
+    border-radius: 100px;
     border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
-    box-shadow: 0 4px 14px rgba(46, 204, 113, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
 }
 
 .hero-cta:hover {
     background: var(--color-cta-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 30px -10px rgba(16, 185, 129, 0.5);
 }
 
 .hero-call {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    transition: all 0.2s;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 1.25rem 2.5rem;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+    backdrop-filter: blur(8px);
 }
 
 .hero-call:hover {
-    border-color: white;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
-@media (max-width: 600px) {
-    .hero-actions {
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .hero-cta,
-    .hero-call {
-        width: 100%;
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 3rem 1.5rem;
+        width: calc(100% - 2rem);
     }
 }

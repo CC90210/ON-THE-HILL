@@ -6,47 +6,47 @@ const Services = () => {
     const services = [
         {
             icon: <Sparkles size={32} />,
-            title: "Interior Window Cleaning",
-            desc: "Streak-free cleaning of all interior glass, tracks, and sills."
+            title: "Interior Cleaning",
+            desc: "Streak-free clarity for all interior glass, tracks, and sills. We treat your home with absolute care."
         },
         {
             icon: <Mountain size={32} />,
-            title: "Exterior Window Cleaning",
-            desc: "From ground level to multi-storey, using water-fed poles to remove grime."
+            title: "Exterior Cleaning",
+            desc: "High-reach capability using deionized water systems for a spotless finish on every floor."
         },
         {
             icon: <CloudRain size={32} />,
-            title: "Eaves & Gutter Cleaning",
-            desc: "Clear debris and flush downspouts to prevent water damage and ice dams."
+            title: "Eaves & Gutter",
+            desc: "Complete debris removal and downspout flushing to protect your foundation and roof."
         },
         {
-            icon: <Zap size={32} />, // Or something representing power/force
+            icon: <Zap size={32} />,
             title: "Pressure Washing",
-            desc: "Restore driveways, patios, siding, and walkways to like-new condition."
+            desc: "Revitalize siding, driveways, and stone walkways with professional-grade pressure systems."
         },
         {
             icon: <Layers size={32} />,
-            title: "Deck Sanding",
-            desc: "Sand, smooth, and prep your weathered deck for staining or sealing."
+            title: "Deck Restoration",
+            desc: "Expert sanding and preparation to bring weathered wood back to its natural glory."
         },
         {
             icon: <Droplets size={32} />,
-            title: "Hard Water Removal",
-            desc: "Specialty products to dissolve mineral deposits and restore glass clarity."
+            title: "Glass Restoration",
+            desc: "Advanced mineral deposit and hard water stain removal for crystal-clear results."
         }
     ];
 
     return (
-        <section id="services" className="section bg-light">
+        <section id="services" className="section-services">
             <div className="container">
-                <div className="section-header">
-                    <h2>Professional Services</h2>
-                    <p>More than just glass cleaning — we care for your entire property exterior.</p>
+                <div className="services-header">
+                    <h2>Our Specialized Services</h2>
+                    <p>Meticulous care for residential properties across the Georgian Bay region.</p>
                 </div>
                 <div className="services-grid">
                     {services.map((s, i) => (
                         <div key={i} className="service-card">
-                            <div className="icon-wrapper">
+                            <div className="service-icon">
                                 {s.icon}
                             </div>
                             <h3>{s.title}</h3>
