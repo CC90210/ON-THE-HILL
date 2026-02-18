@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Mountain, CloudRain, Droplets, Layers, ZapTurn } from 'lucide-react';
+import { Sparkles, Mountain, CloudRain, Droplets, Layers, Zap } from 'lucide-react';
 import './Services.css';
 
 const Services = () => {
@@ -20,7 +20,7 @@ const Services = () => {
             desc: "Clear debris and flush downspouts to prevent water damage and ice dams."
         },
         {
-            icon: <ZapTurn size={32} />, // Or something representing power/force
+            icon: <Zap size={32} />, // Or something representing power/force
             title: "Pressure Washing",
             desc: "Restore driveways, patios, siding, and walkways to like-new condition."
         },
