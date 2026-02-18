@@ -1,0 +1,49 @@
+:root {
+  /* Colors */
+  --color-primary: #1B3A5C;
+  --color-secondary: #FFFFFF;
+  --color-accent: #4AAED9;
+  --color-background: #F5F5F5;
+  --color-text: #1A1A1A;
+  --color-cta: #2ECC71;
+  --color-cta-hover: #27AE60;
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Container */
+  --container-width: 1200px;
+  --padding-x: 1rem;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  letter-spacing: -0.02em;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
