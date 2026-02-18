@@ -6,7 +6,7 @@ const Portfolio = () => {
         { src: "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1200&q=80", category: "Luxury A-Frame", title: "Modern Black Facade" },
         { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", category: "Residential", title: "Collingwood Heritage" },
         { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80", category: "Commercial", title: "Main Street Glass" },
-        { src: "https://images.unsplash.com/photo-1628744276229-47e443ce0d81?auto=format&fit=crop&w=1200&q=80", category: "Cottage", title: "Lakeside Panoramic" },
+        { src: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80", category: "Cottage", title: "Lakeside Panoramic" },
         { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80", category: "Exterior", title: "High-Reach Detail" },
         { src: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80", category: "Restoration", title: "Hard Water Removal" }
     ];

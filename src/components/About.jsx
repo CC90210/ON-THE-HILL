@@ -8,7 +8,7 @@ const About = () => {
                 <div className="about-grid">
                     <div className="about-visual">
                         <img
-                            src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=80"
+                            src="https://images.unsplash.com/photo-1597344318413-568395edb769?auto=format&fit=crop&w=800&q=80"
                             alt="Professional window cleaner working"
                             className="about-image-main"
                         />
